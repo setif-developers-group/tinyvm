@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>VmDashboard</RootNamespace>
+    <AssemblyName>VmDashboard</AssemblyName>
+  </PropertyGroup>
+
+  <!-- The C engine is consumed as a native library: build it first with scripts/build.sh c (MinGW) -->
+  <ItemGroup>
+    <None Include="..\..\build\vm.dll" Condition="Exists('..\..\build\vm.dll')" Link="vm.dll" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

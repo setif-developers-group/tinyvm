@@ -1,0 +1,8 @@
+build/
+*.bin
+__pycache__/
+gui/VmDashboard/bin/
+gui/VmDashboard/obj/
+.vs/
+*.o
+*.exe

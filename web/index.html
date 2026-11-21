@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TinyVM - Web Emulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>TinyVM <span>web emulator</span></h1>
+    <div class="controls">
+      <select id="examples" aria-label="Example program"></select>
+      <button id="assemble" class="primary">Assemble &amp; Load</button>
+      <button id="step" disabled>Step</button>
+      <button id="run" disabled>Run</button>
+      <button id="reset" disabled>Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Assembly</h2>
+      <textarea id="source" spellcheck="false" aria-label="Assembly source"></textarea>
+      <div id="message" role="status"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Registers</h2>
+      <div id="regs" class="regs"></div>
+      <div class="status-row">
+        <span>PC <b id="pc">0x0000</b></span>
+        <span>Flags <b id="flags">----</b></span>
+        <span>Cycles <b id="cycles">0</b></span>
+        <span>Status <b id="status">idle</b></span>
+      </div>
+      <h2>Output</h2>
+      <pre id="output"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>Memory <input id="memaddr" value="0x0000" size="7" aria-label="Memory start address"></h2>
+      <pre id="mem"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>Disassembly / trace</h2>
+      <pre id="trace"></pre>
+    </section>
+  </main>
+
+  <script src="examples.js"></script>
+  <script src="vm.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
