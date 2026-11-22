@@ -61,7 +61,7 @@ Requirements: `gcc` (or clang), `g++`, `python3`, and optionally `node` (JS test
 .NET 8 SDK (dashboard, Windows).
 
 ```bash
-git clone <your-repo-url> tinyvm && cd tinyvm
+git clone https://github.com/setif-developers-group/tinyvm  && cd tinyvm
 
 ./scripts/build.sh            # builds vmrun, vmtool, the shared library, web bundle
 ./scripts/run.sh examples/fibonacci.asm
